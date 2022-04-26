@@ -16,14 +16,12 @@ struct UserModel :Codable{
     var followers = [String]()
     var following = [String]()
     var posts = [String]()
-    //var token : String?
-    
+    var phoneNumber : String?
+    var verifed : Bool?
     
     
 
-    
-    
-    init(username: String, password: String, picture: String, email:String, _ followers: [String],_ following: [String],_ posts: [String])
+    internal init(username: String, password: String, picture: String, email:String, _ followers: [String],_ following: [String],_ posts: [String], phoneNumber:String, verified: Bool)
     {
         self.username = username
         self.password = password
@@ -32,8 +30,16 @@ struct UserModel :Codable{
         self.followers = followers
         self.following = following
         self.posts = posts
+        self.phoneNumber = phoneNumber
+        self.verifed = verified
     }
-    
+    init(username:String, email: String, picture: String, verified: Bool)
+    {
+        self.username = username
+        self.email = email
+        self.picture = picture
+        self.verifed = verified
+    }
     init (username:String, password: String, email: String)
     {
         self.username = username

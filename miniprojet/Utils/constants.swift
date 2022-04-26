@@ -13,3 +13,6 @@ let registerUrl = "http://localhost:4001/user/register"
 let LoginUrl = "http://localhost:4001/user/Login"
 let forgotPasswordUrl = "http://localhost:4001/user/requestRestPassword"
 let GetDetailsUrl = "http://localhost:4001/user/getUserDetails"
+
+let base_url = "https://iyumios.herokuapp.com"
+let Resto_URL = base_url + "/restos/"

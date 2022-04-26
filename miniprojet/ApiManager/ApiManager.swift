@@ -21,8 +21,21 @@ typealias Handler = (Swift.Result<Any?, APIErrors>)-> Void
 class ApiManager{
     static let shareInstance = ApiManager()
     
+    func makeItem(jsonItem: JSON) -> UserModel {
+        
+        
+        
+        return UserModel(
+            username: jsonItem["username"].stringValue,
+            email: jsonItem["email"].stringValue,
+           // phoneNumber: jsonItem["phoneNumber"].stringValue,
+            picture: jsonItem["picture"].stringValue,
+            verified : jsonItem["verified"].boolValue
+            
+        )
+    }
 
-    func getDetailsFromKey(email: String, completionHandler : @escaping /*([ResponseModel])-> Void*/ Handler)
+    func getDetailsFromKey(email: String, completed: @escaping (Bool, (UserModel)) -> Void )
     {
         var request = URLRequest(url: URL(string: GetDetailsUrl)!)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -43,19 +56,23 @@ class ApiManager{
             case .success(let data):
                do {
                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                 
+    
         
 
                  //  let parseJson = json
                    if response.response?.statusCode == 201{
                        
-                       let jsonres = JSON(data! as Any)
-                        print(data)
-                        let user = jsonres["FoundUser"]
-                      // completionHandler(user.rawValue)
-                   //    completionHandler(user.rawValue)
-                    //   completionHandler(.success(" successfully"))
-                       //completionHandler(user.rawValue as! [ResponseModel])
+                       let jsonData = JSON(response.data!)
+                       
+                       let username = jsonData["FoundUser"]["username"].rawValue as! String
+                       let email = jsonData["FoundUser"]["email"].rawValue as! String
+                       let verified = jsonData["FoundUser"]["verified"].boolValue as! Bool
+                      // let phoneNumber = jsonData["FoundUser"]["phoneNumber"].rawValue as! String
+                       let picture = jsonData["FoundUser"]["picture"].rawValue as! String
+                       
+                       let user = UserModel(username: username , email: email, picture: picture, verified: verified)
+                       
+                       completed(true, user)
                     
                    }
                    
@@ -72,6 +89,7 @@ class ApiManager{
                }
             case .failure(let err) :
                 print(err.localizedDescription)
+                //completed(false, nil)
                 
             }
         }

@@ -11,19 +11,16 @@ import SwiftyJSON
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    
-    
+
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImg: UIImageView!
     
-  /*  var completionHandler: ([user]) -> Void = { (user) in
-    print("Here are the \(patients)")
-    }*/
+    var user :UserModel?
+
 
     let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
- 
-    
     var TableNames = ["Profile", "Settings", "Notifications","Around me", "Log Out"]
     
     @IBOutlet weak var TableDrawer: UITableView!
@@ -50,34 +47,69 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
   
     override func viewDidLoad() {
 
-        let email = keychain["Email"]
-        ApiManager.shareInstance.getDetailsFromKey(email: email!) {
-            (response) in
-            switch response
-             {
-             case .success :
-                 do {
-                    // userEmail.text == ResponseModel.username 
-
-                 }
-                 
-             case .failure:
-                    print("ntohing to do, this is always true")
-            
-             }
-        }
+        getDetails()
         
         self.TableDrawer.backgroundColor = .clear
-        self.userImg?.layer.cornerRadius = (userImg?.frame.size.width ?? 0.0) / 2
-        
-        self.userImg?.clipsToBounds = true
-        self.userImg?.layer.borderWidth = 3.0
-        self.userImg?.layer.borderColor = UIColor.white.cgColor
-        
+       // self.userImg?.layer.cornerRadius = userImg.frame.size.width / 2
+      //  self.userImg?.clipsToBounds = true
+        //self.userImg?.layer.borderWidth = 1
+      //  self.userImg?.layer.borderColor = UIColor.white.cgColor
 
     }
     
+    func getDetails(){
+        let email = keychain["Email"]
+        ApiManager.shareInstance.getDetailsFromKey(email: email!) {
+            
+            [self] success, results in
+                if success {
+                    
+                    print(results.self)
+                   // user = results.self
+                    
+                    userEmail.text = results.self.email
+                    userName.text = results.self.username
+                    
+                    if results.self.picture == "No Picture"
+                        {
+                        userImg.image = imageWith(name: results.self.username)
+                        }
+                    
+                }
+        }
+    }
+    
+    func imageWith(name: String?) -> UIImage? {
+       let frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+       let nameLabel = UILabel(frame: frame)
+       nameLabel.textAlignment = .center
+       nameLabel.backgroundColor = .lightGray
+       nameLabel.textColor = .white
+       nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
+       var initials = ""
+       if let initialsArray = name?.components(separatedBy: " ") {
+           if let firstWord = initialsArray.first {
+               if let firstLetter = firstWord.first {
+                   initials += String(firstLetter).capitalized }
+           }
+           if initialsArray.count > 1, let lastWord = initialsArray.last {
+               if let lastLetter = lastWord.first { initials += String(lastLetter).capitalized
+               }
+           }
+       } else {
+           return nil
+       }
+       nameLabel.text = initials
+       UIGraphicsBeginImageContext(frame.size)
+       if let currentContext = UIGraphicsGetCurrentContext() {
+           nameLabel.layer.render(in: currentContext)
+           let nameImage = UIGraphicsGetImageFromCurrentImageContext()
+           return nameImage
+       }
+       return nil
+    }
 
-   
+
+    
 
 }

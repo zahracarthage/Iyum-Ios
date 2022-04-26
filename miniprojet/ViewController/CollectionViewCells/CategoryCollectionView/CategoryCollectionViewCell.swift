@@ -18,6 +18,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     func setup (category: DishResto) {
         categoryTitleLab.text = category.name
-        categoryImageView.kf.setImage(with: category.picture.asUrl)
+        categoryImageView.kf.setImage(with: category.picture?.asUrl)
     }
 }
