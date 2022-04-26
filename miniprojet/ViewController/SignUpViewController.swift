@@ -72,7 +72,6 @@ class SignUpViewController: UIViewController, ASAuthorizationControllerDelegate,
         {
             let user = UserModel(username: username, password: password, email: email)
             ApiManager.shareInstance.callingRegisterApi(register: user)
-
         }
         else {
             let Alert = UIAlertController(title: " Password", message: "check your password", preferredStyle: .alert)

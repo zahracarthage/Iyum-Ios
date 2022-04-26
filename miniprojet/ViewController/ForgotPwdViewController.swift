@@ -36,7 +36,7 @@ class ForgotPwdViewController: UIViewController {
         
         ApiManager.shareInstance.callingForgotPasswordApi(email: email)
         {
-        
+    
         (result) in
          switch result
          {

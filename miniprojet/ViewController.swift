@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import KeychainAccess
 
 class ViewController: UIViewController {
     
@@ -41,12 +42,12 @@ class ViewController: UIViewController {
     
    
     @IBAction func NavigateToMainPage(_ sender: Any) {
-        guard let username = self.EmailTextField.text else {return}
+        guard let email = self.EmailTextField.text else {return}
         guard let password = self.pwdTextfield.text else {return}
        // let token: String  = ""
         
         
-        let user = UserModel(username: username, password: password)
+        let user = UserModel(email: email, password: password)
         
         ApiManager.shareInstance.callingLoginApi(Login: user)
         {
@@ -60,6 +61,9 @@ class ViewController: UIViewController {
                     let AccueilView = storyBoard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
                     AccueilView.modalPresentationStyle = .fullScreen
                     self.present(AccueilView, animated:true, completion:nil)
+                    
+                    let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
+                    keychain["Email"] = email
                   
 
                 }

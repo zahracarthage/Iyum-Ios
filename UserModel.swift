@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct UserModel :Encodable{
+struct UserModel :Codable{
     
-    var username: String;
+    var username: String?
     var password : String?
     var picture: String?
     var email: String?
@@ -17,6 +17,10 @@ struct UserModel :Encodable{
     var following = [String]()
     var posts = [String]()
     //var token : String?
+    
+    
+    
+
     
     
     init(username: String, password: String, picture: String, email:String, _ followers: [String],_ following: [String],_ posts: [String])
@@ -47,6 +51,11 @@ struct UserModel :Encodable{
     {
         self.username = username
         self.email = email
+    }
+    init(email: String, password: String)
+    {
+        self.email = email
+        self.password =  password
     }
    
     

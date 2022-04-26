@@ -14,12 +14,16 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.1)
+  - KeychainAccess (4.2.2)
   - Kingfisher (7.2.1)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - GoogleSignIn
+  - KeychainAccess
   - Kingfisher
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -28,7 +32,9 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - KeychainAccess
     - Kingfisher
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 0c07058209f211e3d32824f8e0766d7c44ac83b3
@@ -36,8 +42,10 @@ SPEC CHECKSUMS:
   GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
   GTMAppAuth: 987526d41b07efb1bedda5e936fe0cb718a03113
   GTMSessionFetcher: 4577a4cc914a5a07c40a8a0ad0acc22080418c2d
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: f0513a460a9960a01e57b3d9b0644419f032ff08
+PODFILE CHECKSUM: 6cd150bb6c2cc9ed033c7a397dac32699bf4c6da
 
 COCOAPODS: 1.11.3

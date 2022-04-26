@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class AccueilViewController: UIViewController{
   
@@ -23,8 +24,13 @@ class AccueilViewController: UIViewController{
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
+
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         registerCells()
+        
+        let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
+       
+        
         // Do any additional setup after loading the view.
     }
     

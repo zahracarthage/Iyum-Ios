@@ -9,6 +9,9 @@ target 'miniprojet' do
   pod "Kingfisher"
   pod “Alamofire” 
   pod 'GoogleSignIn'
+  pod 'KeychainAccess'
+  pod 'SwiftyJSON'
+
 
 
 end

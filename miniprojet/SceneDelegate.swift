@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +17,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
+        let Main = UIStoryboard(name: "Main", bundle: nil)
+
+        if (keychain["Email"] != "")
+        {
+            print("user already logged in")
+            
+          //  let AccueilNav = Main.instantiateViewController(withIdentifier: "AccueilNav") as! UINavigationController
+            //AccueilNav.hidesBottomBarWhenPushed = false
+           // self.window?.rootViewController = AccueilNav
+        }
+        else {
+            print("no user logged in")
+            
+        }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        
+          
         
 
        
@@ -25,15 +45,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
                // the url is going to be in userActivity.webpageURL
         
-        guard let url = userActivity.webpageURL else {return}
+       // guard let url = userActivity.webpageURL else {return}
      
         if (userActivity.webpageURL?.pathComponents[2] != nil)
         {
            
             let userId = userActivity.webpageURL?.pathComponents[1]
             let token = userActivity.webpageURL?.pathComponents[2]
-            print(userId)
-            print(token)
+           
             
              if self.window?.rootViewController?.presentedViewController != nil {
                  self.window?.rootViewController?.dismiss(animated: false, completion: nil)

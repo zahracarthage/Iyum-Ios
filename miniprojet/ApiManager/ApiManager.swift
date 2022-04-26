@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 enum APIErrors: Error{
     case custom(message : String)
@@ -20,6 +21,61 @@ typealias Handler = (Swift.Result<Any?, APIErrors>)-> Void
 class ApiManager{
     static let shareInstance = ApiManager()
     
+
+    func getDetailsFromKey(email: String, completionHandler : @escaping /*([ResponseModel])-> Void*/ Handler)
+    {
+        var request = URLRequest(url: URL(string: GetDetailsUrl)!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let encoder = JSONEncoder()
+        let dictParam: [String: String] = ["email": email]
+
+        let body = try! encoder.encode(dictParam)
+        
+        request.httpBody = body
+        
+     
+        AF.request(request).response
+        {
+            response in
+            switch response.result{
+            case .success(let data):
+               do {
+                   let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                 
+        
+
+                 //  let parseJson = json
+                   if response.response?.statusCode == 201{
+                       
+                       let jsonres = JSON(data! as Any)
+                        print(data)
+                        let user = jsonres["FoundUser"]
+                      // completionHandler(user.rawValue)
+                   //    completionHandler(user.rawValue)
+                    //   completionHandler(.success(" successfully"))
+                       //completionHandler(user.rawValue as! [ResponseModel])
+                    
+                   }
+                   
+                   else {
+                       print("user not found")
+                      // completionHandler(.failure(.custom(message: "Please the credentials you entered")))
+
+                   }
+                
+               }catch{
+                   print(error)
+                 //  completionHandler(.failure(.custom(message: "Please try again")))
+
+               }
+            case .failure(let err) :
+                print(err.localizedDescription)
+                
+            }
+        }
+    }
 
     func updatePassword(userId: String, Token: String, Password: String,completionHandler : @escaping Handler )
     {
@@ -53,7 +109,8 @@ class ApiManager{
                     completionHandler(.failure(.custom(message: "Please the credentials you entered")))
                 }
              
-            }catch{
+            }
+                catch{
                 print(error.localizedDescription)
                 completionHandler(.failure(.custom(message: "Please try again")))
                 
@@ -133,6 +190,8 @@ class ApiManager{
             }
         }
     }
+    
+    
     
     func callingLoginApi(Login: UserModel, completionHandler : @escaping Handler)
     {
