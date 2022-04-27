@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,45 +19,36 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBo-nC-ohE" customClass="CardView" customModule="miniprojet">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="56"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3cB-ma-CqW">
-                                <rect key="frame" x="3" y="3" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="S9m-et-Qcn"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7O-Cc-1nd">
-                                <rect key="frame" x="43" y="14" width="104" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7O-Cc-1nd">
+                                <rect key="frame" x="31" y="14" width="89" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="k7O-Cc-1nd" firstAttribute="leading" secondItem="3cB-ma-CqW" secondAttribute="trailing" id="3MU-Lz-6PA"/>
-                            <constraint firstItem="k7O-Cc-1nd" firstAttribute="top" secondItem="sBo-nC-ohE" secondAttribute="top" constant="14" id="JwD-Op-R7w"/>
-                            <constraint firstAttribute="bottom" secondItem="3cB-ma-CqW" secondAttribute="bottom" constant="13" id="KUv-fE-Gv1"/>
-                            <constraint firstItem="3cB-ma-CqW" firstAttribute="centerY" secondItem="k7O-Cc-1nd" secondAttribute="centerY" id="Zzd-Sf-hXJ"/>
-                            <constraint firstAttribute="trailing" secondItem="k7O-Cc-1nd" secondAttribute="trailing" constant="3" id="lla-JB-DKy"/>
-                            <constraint firstItem="3cB-ma-CqW" firstAttribute="leading" secondItem="sBo-nC-ohE" secondAttribute="leading" constant="3" id="pWq-I0-OZg"/>
-                            <constraint firstItem="3cB-ma-CqW" firstAttribute="top" secondItem="sBo-nC-ohE" secondAttribute="top" constant="3" id="s4B-I0-bVV"/>
+                            <constraint firstItem="k7O-Cc-1nd" firstAttribute="top" secondItem="sBo-nC-ohE" secondAttribute="top" constant="14" id="4Ma-sC-tmg"/>
+                            <constraint firstItem="k7O-Cc-1nd" firstAttribute="centerX" secondItem="sBo-nC-ohE" secondAttribute="centerX" id="Iot-lY-3wm"/>
+                            <constraint firstItem="k7O-Cc-1nd" firstAttribute="centerY" secondItem="sBo-nC-ohE" secondAttribute="centerY" id="eNM-ee-ebf"/>
+                            <constraint firstItem="k7O-Cc-1nd" firstAttribute="leading" secondItem="sBo-nC-ohE" secondAttribute="leading" constant="31" id="tkI-zS-kku"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="sBo-nC-ohE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Pl-1p-RVt"/>
-                <constraint firstItem="sBo-nC-ohE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="EFR-wA-VjZ"/>
-                <constraint firstItem="sBo-nC-ohE" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="UdU-Wk-cBi"/>
-                <constraint firstItem="sBo-nC-ohE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZaM-yj-E6d"/>
+                <constraint firstItem="sBo-nC-ohE" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="BTB-zJ-nzW"/>
+                <constraint firstItem="sBo-nC-ohE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lm3-Ye-Ye4"/>
+                <constraint firstItem="sBo-nC-ohE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hwP-Ar-uof"/>
+                <constraint firstItem="sBo-nC-ohE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="pxo-7Q-edH"/>
             </constraints>
             <size key="customSize" width="150" height="56"/>
             <connections>
-                <outlet property="categoryImageView" destination="3cB-ma-CqW" id="EyH-HA-Bmr"/>
                 <outlet property="categoryTitleLab" destination="k7O-Cc-1nd" id="zwn-xS-jgl"/>
             </connections>
             <point key="canvasLocation" x="210.1449275362319" y="134.59821428571428"/>
         </collectionViewCell>
     </objects>
 </document>
+

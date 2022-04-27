@@ -1,27 +1,23 @@
-//
-//  CardView.swift
-//  miniprojet
-//
-//  Created by daly on 11/4/2022.
-//
 
 import UIKit
 
-class CardView : UIView {
+class CardView: UIView {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initialSteup()
-    }
-    required init?(coder: NSCoder){
-        super.init(coder: coder)
-        initialSteup()
+        initialSetup()
     }
     
-    private func initialSteup(){
-        layer.shadowColor = UIColor.white.cgColor
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initialSetup()
+    }
+    
+    private func initialSetup() {
+        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = .zero
         layer.cornerRadius = 10
         layer.shadowOpacity = 0.1
-        
+        layer.shadowRadius = 10
     }
 }

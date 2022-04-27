@@ -9,15 +9,27 @@ import UIKit
 
 class ForgotPwdViewController: UIViewController {
 
+    @IBOutlet weak var SendEmailBtn: UIButton!
     @IBOutlet weak var EmailField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EmailField.borderStyle = UITextField.BorderStyle.roundedRect
-        EmailField.backgroundColor = Colors.textViewBgcolor;
+        initSetup()
             
 
         // Do any additional setup after loading the view.
+    }
+    
+    func initSetup()
+    {
+        EmailField.borderStyle = UITextField.BorderStyle.roundedRect
+        EmailField.backgroundColor = Colors.textViewBgcolor;
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard)))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardwillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
 
@@ -36,7 +48,7 @@ class ForgotPwdViewController: UIViewController {
         
         ApiManager.shareInstance.callingForgotPasswordApi(email: email)
         {
-        
+    
         (result) in
          switch result
          {
@@ -59,4 +71,47 @@ class ForgotPwdViewController: UIViewController {
     }
     
 }
+    
+    @objc private func hideKeyBoard()
+    {
+        self.view.endEditing(true)
+    }
+    
+    
+    @objc private func KeyboardWillShow(notification : NSNotification)
+    {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as?
+            NSValue {
+            if self.view.frame.origin.y == 0 {
+                    let keyboardHeight = keyboardFrame.cgRectValue.height
+                    let bottomspace = self.view.frame.height - (SendEmailBtn.frame.origin.y + SendEmailBtn.frame.height)
+
+                    self.view.frame.origin.y -= keyboardHeight - bottomspace + 15
+
+                     //  self.view.frame.origin.y -= keyboardSize.height
+                   }
+            
+            
+        }
+     
+    }
+    
+    @objc private func keyboardwillHide(notification : NSNotification)
+    {
+        if self.view.frame.origin.y != 0
+        {
+            self.view.frame.origin.y = 0
+        }
+
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+  
+    
+    
 }
