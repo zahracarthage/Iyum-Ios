@@ -14,19 +14,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
         let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
-        let Main = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        if (keychain["Email"] != "")
+        if ((keychain["Email"]?.isEmpty) != nil)
         {
             print("user already logged in")
             
-          //  let AccueilNav = Main.instantiateViewController(withIdentifier: "AccueilNav") as! UINavigationController
-            //AccueilNav.hidesBottomBarWhenPushed = false
-           // self.window?.rootViewController = AccueilNav
+            print(keychain["Email"])
+            
+      
+            
+            /*let Accueil = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "AccueilView") as! AccueilViewController
+              DispatchQueue.main.async {
+                  Accueil.modalPresentationStyle = .fullScreen
+                  self.window?.rootViewController?.present(Accueil, animated: true, completion: nil)
+              }*/
+     
+
+            
+
         }
         else {
             print("no user logged in")
@@ -107,8 +115,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
-   
-    
+ 
    
 
 

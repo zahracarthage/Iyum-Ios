@@ -9,41 +9,75 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RestoCollectionViewCell" customModule="miniprojet" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="170" height="220"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RestoCollectionViewCell" id="gTV-IL-0wX" customClass="RestoCollectionViewCell" customModule="miniprojet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="170" height="220"/>
+                <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ong-iM-Dm6">
-                        <rect key="frame" x="7" y="6" width="158" height="130"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDi-mU-EPO">
-                        <rect key="frame" x="20" y="148" width="145" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgp-hD-CxF" customClass="CardView" customModule="miniprojet" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="300"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IVt-lk-Y3s">
+                                <rect key="frame" x="8" y="8" width="164" height="284"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yf0-NM-68y">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0vS-Lj-R8p">
+                                        <rect key="frame" x="0.0" y="28.5" width="164" height="208"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-Kw-I3t">
+                                        <rect key="frame" x="0.0" y="244.5" width="164" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.87320786709999998" green="0.23044547439999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zK-EE-S9b">
+                                        <rect key="frame" x="0.0" y="267" width="164" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IVt-lk-Y3s" firstAttribute="top" secondItem="lgp-hD-CxF" secondAttribute="top" constant="8" id="Evt-by-2PG"/>
+                            <constraint firstAttribute="width" constant="180" id="NcV-Yg-wOZ"/>
+                            <constraint firstAttribute="height" constant="300" id="V3T-TQ-gSY"/>
+                            <constraint firstAttribute="bottom" secondItem="IVt-lk-Y3s" secondAttribute="bottom" constant="8" id="jM8-LV-jDv"/>
+                            <constraint firstItem="IVt-lk-Y3s" firstAttribute="leading" secondItem="lgp-hD-CxF" secondAttribute="leading" constant="8" id="qKF-sQ-HAS"/>
+                            <constraint firstAttribute="trailing" secondItem="IVt-lk-Y3s" secondAttribute="trailing" constant="8" id="t9k-dp-FvJ"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="xDi-mU-EPO" secondAttribute="bottom" constant="38" id="3Ix-ib-fGJ"/>
-                <constraint firstItem="xDi-mU-EPO" firstAttribute="top" secondItem="Ong-iM-Dm6" secondAttribute="bottom" constant="12" id="Krl-zG-Fyf"/>
-                <constraint firstItem="Ong-iM-Dm6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="LWF-8O-m5Q"/>
-                <constraint firstItem="Ong-iM-Dm6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Mbf-y4-Uww"/>
-                <constraint firstItem="xDi-mU-EPO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="O8T-5V-PmD"/>
-                <constraint firstAttribute="bottom" secondItem="Ong-iM-Dm6" secondAttribute="bottom" constant="30" id="b7z-AN-Zon"/>
-                <constraint firstAttribute="trailing" secondItem="Ong-iM-Dm6" secondAttribute="trailing" constant="4" id="m4P-OE-Kpe"/>
-                <constraint firstItem="xDi-mU-EPO" firstAttribute="trailing" secondItem="Ong-iM-Dm6" secondAttribute="trailing" id="z5f-ea-qMI"/>
+                <constraint firstAttribute="trailing" secondItem="lgp-hD-CxF" secondAttribute="trailing" id="4Zh-gr-kjl"/>
+                <constraint firstAttribute="bottom" secondItem="lgp-hD-CxF" secondAttribute="bottom" id="DrN-39-2S9"/>
+                <constraint firstItem="lgp-hD-CxF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VxR-7x-x2O"/>
+                <constraint firstItem="lgp-hD-CxF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mY7-dI-Oga"/>
             </constraints>
-            <size key="customSize" width="170" height="220"/>
+            <size key="customSize" width="174" height="256"/>
             <connections>
-                <outlet property="RestoImage" destination="Ong-iM-Dm6" id="UPq-8r-i8o"/>
-                <outlet property="RestoName" destination="xDi-mU-EPO" id="9p1-O9-iuN"/>
+                <outlet property="categorieLbl" destination="4zK-EE-S9b" id="e7q-G4-BaK"/>
+                <outlet property="imageRes" destination="0vS-Lj-R8p" id="FWY-Vu-jvE"/>
+                <outlet property="rate" destination="Ddl-Kw-I3t" id="Ydt-7v-hen"/>
+                <outlet property="titleLabel" destination="yf0-NM-68y" id="Tah-vC-ptp"/>
             </connections>
-            <point key="canvasLocation" x="224.63768115942031" y="122.54464285714285"/>
+            <point key="canvasLocation" x="124.6376811594203" y="142.63392857142856"/>
         </collectionViewCell>
     </objects>
 </document>

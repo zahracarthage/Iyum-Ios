@@ -8,7 +8,7 @@
 import Foundation
 
 struct DishResto  {
-    internal init(_id: String? = nil, name: String? = nil, picture: String? = nil, about: String? = nil, category: [String]? = nil, reservation: [String]? = nil, nbplaces: [String]? = nil, menu: [String]? = nil, localisation: [String]? = nil,nbRate: Int? = nil,rate: String? = nil) {
+    internal init(_id: String? = nil, name: String? = nil, picture: String? = nil, about: String? = nil, category: [String]? = nil, reservation: [String]? = nil, nbplaces: [String]? = nil, menu: [String]? = nil, localisation: [String]? = nil,nbRate: Int? = nil,rate: Int? = nil) {
         self._id = _id
         self.name = name
         self.picture = picture
@@ -28,7 +28,7 @@ struct DishResto  {
     var menu :[String]?;
     var localisation:[String]?;
     var nbRate : Int?;
-    var rate : String?;
+    var rate : Int?;
     
 }
 

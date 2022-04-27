@@ -19,9 +19,9 @@ class RestoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageRes: UIImageView!
     func setup (resto: DishResto) {
         let imgname = "https://firebasestorage.googleapis.com/v0/b/mini-projet-2e934.appspot.com/o/images%2F"+resto.picture!+"?alt=media"
-        //let rateS = "\(String(describing: resto.rate))"
+        let rateS = "\(String(describing: resto.rate))"
         titleLabel.text =  resto.name
-        rate.text = resto.rate!  + "⭐️"
+        rate.text = rateS  + "⭐️"
         imageRes.kf.setImage(with: imgname.asUrl)
         categorieLbl.text = resto.category?.first
         

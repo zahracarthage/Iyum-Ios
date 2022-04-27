@@ -1,9 +1,3 @@
-//
-//  CardView.swift
-//  miniprojet
-//
-//  Created by daly on 11/4/2022.
-//
 
 import UIKit
 

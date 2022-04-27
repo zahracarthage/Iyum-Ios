@@ -13,15 +13,14 @@ class AccueilViewController: UIViewController{
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
-    @IBOutlet weak var CheckProfileBtn: UIButton!
     @IBOutlet weak var AllDishCollectionView: UICollectionView!
     
-    @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var restoCollectionView: UICollectionView!
+    
+    @IBOutlet weak var CheckProfileBtn: UIButton!
     
     var categories = ["Traditionelle"," burgers","cuisine americaine","plats","sandwich"]
     
-
    var restosAll : [DishResto] = []
     var restosAllEx : [DishResto] = []
 
@@ -33,9 +32,7 @@ class AccueilViewController: UIViewController{
         AllDishCollectionView.dataSource = self
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         registerCells()
-        self.categoryCollectionView.reloadData()
-   self.restoCollectionView.reloadData()
-   self.AllDishCollectionView.reloadData()
+        
         // Do any additional setup after loading the view.
        
    
@@ -49,7 +46,8 @@ class AccueilViewController: UIViewController{
                 self.restosAll.append(contentsOf: results!)
                 print(self.restosAll.count)
                 tail = self.restosAll.count
-                Test.restosAll = self.restosAll
+                restosAllEx = self.restosAll
+                print(restosAllEx)
                      self.categoryCollectionView.reloadData()
                 self.restoCollectionView.reloadData()
                 self.AllDishCollectionView.reloadData()
@@ -101,10 +99,9 @@ extension AccueilViewController : UICollectionViewDelegate,UICollectionViewDataS
             let destination = segue.destination as! DetailRestauViewController
             destination.resto = sender as? DishResto
                 }
-      
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let res = Test.restosAll[indexPath.row]
+        let res = restosAllEx[indexPath.row]
         performSegue(withIdentifier: "mSgueDetailRestau", sender: res)
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -113,25 +110,19 @@ extension AccueilViewController : UICollectionViewDelegate,UICollectionViewDataS
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
             cell.setup(category: categories[indexPath.row])
             return cell
+            
         case restoCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RestoCollectionViewCell.identifier, for: indexPath) as! RestoCollectionViewCell
-            cell.setup(resto: Test.restosAll[indexPath.row])
+            cell.setup(resto: restosAllEx[indexPath.row])
             return cell
         case AllDishCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllDIshCollectionViewCell.identifier, for: indexPath) as! AllDIshCollectionViewCell
-            cell.setup(resto: Test.restosAll[indexPath.row])
+            cell.setup(resto: restosAllEx[indexPath.row])
             return cell
         default: return UICollectionViewCell()
         }
         
     }
-    
-    
-   
-    
-    
-       
-
 }
 
 

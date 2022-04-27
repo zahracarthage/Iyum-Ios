@@ -21,19 +21,7 @@ typealias Handler = (Swift.Result<Any?, APIErrors>)-> Void
 class ApiManager{
     static let shareInstance = ApiManager()
     
-    func makeItem(jsonItem: JSON) -> UserModel {
-        
-        
-        
-        return UserModel(
-            username: jsonItem["username"].stringValue,
-            email: jsonItem["email"].stringValue,
-           // phoneNumber: jsonItem["phoneNumber"].stringValue,
-            picture: jsonItem["picture"].stringValue,
-            verified : jsonItem["verified"].boolValue
-            
-        )
-    }
+    
 
     func getDetailsFromKey(email: String, completed: @escaping (Bool, (UserModel)) -> Void )
     {

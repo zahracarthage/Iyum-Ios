@@ -8,6 +8,7 @@
 import UIKit
 import KeychainAccess
 import SwiftyJSON
+import KeychainAccess
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -21,9 +22,30 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 
     let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
-    var TableNames = ["Profile", "Settings", "Notifications","Around me", "Log Out"]
+    var TableNames = ["Profile", "Settings", "Notifications", "Log Out"]
+
     
     @IBOutlet weak var TableDrawer: UITableView!
+    
+    
+    
+    
+    override func viewDidLoad() {
+        //userImg.image.
+        
+        userImg?.layer.cornerRadius = (userImg?.frame.size.width ?? 0.0) / 2
+        userImg?.clipsToBounds = true
+        userImg?.layer.borderWidth = 3.0
+        userImg?.layer.borderColor = UIColor.white.cgColor
+     
+
+        getDetails()
+        
+        self.TableDrawer.backgroundColor = .clear
+
+
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableNames.count
@@ -45,17 +67,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
   
-    override func viewDidLoad() {
-
-        getDetails()
-        
-        self.TableDrawer.backgroundColor = .clear
-       // self.userImg?.layer.cornerRadius = userImg.frame.size.width / 2
-      //  self.userImg?.clipsToBounds = true
-        //self.userImg?.layer.borderWidth = 1
-      //  self.userImg?.layer.borderColor = UIColor.white.cgColor
-
-    }
     
     func getDetails(){
         let email = keychain["Email"]
@@ -64,7 +75,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             [self] success, results in
                 if success {
                     
-                    print(results.self)
+                    //print(results.self)
                    // user = results.self
                     
                     userEmail.text = results.self.email
@@ -108,6 +119,48 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
        return nil
     }
+
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+         
+        
+         
+         if (indexPath.row == 0)
+         {
+             print("cell 0")
+         }
+         if (indexPath.row == 1)
+         {
+             print("cell 1")
+         }
+         if (indexPath.row == 2)
+         {
+             print("cell 2")
+         }
+         else if (indexPath.row == 3)
+         {
+             do {
+                 try keychain.remove("Email")
+                 print("deleted")
+                 
+                
+                 
+                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                     let MainVue = storyboard.instantiateViewController(withIdentifier: "ViewController")
+                 MainVue.modalPresentationStyle = .overFullScreen
+                 self.present(MainVue, animated: true){
+                 self.view.removeFromSuperview()
+                 }
+
+                  
+             } catch let error {
+                 print("error: \(error)")
+             }
+         }
+         
+         
+    }
+
 
 
     
