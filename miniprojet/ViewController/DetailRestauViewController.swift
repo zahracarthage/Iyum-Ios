@@ -20,9 +20,9 @@ class DetailRestauViewController: UIViewController {
         imgRes.kf.setImage(with: imgname.asUrl)
         descp.text = resto!.about
         Test.id = resto!._id!
+                
         
-        //nbRate.setTitle("Rate (5)", for: .normal)
-      // print(raitingStack.setStarsRating(rating: raitingStack.starsRating))
+        
     }
     @IBAction func reserve(_ sender: Any) {
       //  print(raitingStack.starsRating)

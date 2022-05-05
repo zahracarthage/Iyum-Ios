@@ -7,8 +7,8 @@
 
 import UIKit
 import CoreData
-import GoogleSignIn
 import KeychainAccess
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       
+      // GMSServices.provideAPIKey("AIzaSyB6v9j5I5LNF5FkagXwTDskqmJGqOLShE0")
+       //GMSPlacesClient.provideAPIKey("AIzaSyB6v9j5I5LNF5FkagXwTDskqmJGqOLShE0")
+
       
         return true
     }
@@ -82,17 +84,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        print("Continue User Activity called: ")
-        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-            let url = userActivity.webpageURL!
-            print(url.absoluteString)
-            //handle url and open whatever page you want to open.
-        }
-        return true
-    }
-
     
 
 

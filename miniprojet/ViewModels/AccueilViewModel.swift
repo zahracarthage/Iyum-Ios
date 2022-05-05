@@ -10,6 +10,7 @@ import SwiftyJSON
 import Alamofire
  class AccueilViewModel{
     
+     
     static let sharedInstance = AccueilViewModel()
     
     func findAllResto(  completed: @escaping (Bool, [DishResto]?) -> Void ) {
@@ -25,6 +26,8 @@ import Alamofire
                         for singleJsonItem in jsonData["restos"]  {
                             restos!.append(self.makeItem(jsonItem: singleJsonItem.1))
                         }
+                       
+                       
                         completed(true, restos)
                     case let .failure(error):
                         debugPrint(error)
@@ -32,6 +35,7 @@ import Alamofire
                     }
                 }
         }
+     
     func makeItem(jsonItem: JSON) -> DishResto {
         
         var BParray : [String] = []

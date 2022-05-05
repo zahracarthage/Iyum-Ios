@@ -23,6 +23,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>MBXAccessToken</key>
+	<string>sk.eyJ1IjoiemFocmFjYXJ0aGFnZSIsImEiOiJjbDJpemM5aDQwbWhuM21vN3U2Y2dyYnlhIn0.wXxqkQZxvZxa_FG-rdcRAA</string>
 	<key>Privacy – Camera Usage Description</key>
 	<string>QRScan needs camera access to read QRCode</string>
 	<key>UIApplicationSceneManifest</key>
@@ -44,5 +46,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is required for xyz benefits for you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is required for xyz benefits for you</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access to photos.</string>
 </dict>
 </plist>
