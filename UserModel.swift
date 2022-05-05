@@ -33,12 +33,13 @@ struct UserModel :Codable{
         self.phoneNumber = phoneNumber
         self.verifed = verified
     }
-    init(username:String, email: String, picture: String, verified: Bool)
+    init(username:String, email: String, picture: String, verified: Bool, phoneNumber: String)
     {
         self.username = username
         self.email = email
         self.picture = picture
         self.verifed = verified
+        self.phoneNumber = phoneNumber
     }
     init (username:String, password: String, email: String)
     {

@@ -8,9 +8,12 @@ target 'miniprojet' do
   # Pods for miniprojet
   pod "Kingfisher"
   pod “Alamofire” 
-  pod 'GoogleSignIn'
   pod 'KeychainAccess'
   pod 'SwiftyJSON'
+  pod 'MapboxMaps', '10.4.3'
+  pod 'MapboxNavigation', '~> 2.4'
+
+
 
 
 

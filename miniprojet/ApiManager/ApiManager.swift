@@ -44,10 +44,8 @@ class ApiManager{
             case .success(let data):
                do {
                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
-    
-        
 
-                 //  let parseJson = json
+                   //let parseJson = json
                    if response.response?.statusCode == 201{
                        
                        let jsonData = JSON(response.data!)
@@ -55,10 +53,10 @@ class ApiManager{
                        let username = jsonData["FoundUser"]["username"].rawValue as! String
                        let email = jsonData["FoundUser"]["email"].rawValue as! String
                        let verified = jsonData["FoundUser"]["verified"].boolValue as! Bool
-                      // let phoneNumber = jsonData["FoundUser"]["phoneNumber"].rawValue as! String
+                       let phoneNumber = jsonData["FoundUser"]["phoneNumber"].rawValue as! String
                        let picture = jsonData["FoundUser"]["picture"].rawValue as! String
-                       
-                       let user = UserModel(username: username , email: email, picture: picture, verified: verified)
+        
+                       let user = UserModel(username: username , email: email, picture: picture, verified: verified, phoneNumber: phoneNumber)
                        
                        completed(true, user)
                     
@@ -83,6 +81,42 @@ class ApiManager{
         }
     }
 
+    
+    func updateUser(email: String, username: String, phoneNumber: String, completionHandler : @escaping Handler)
+    {
+        let Url = "http://localhost:4001/user/update/\(email)"
+        var request = URLRequest(url: URL(string: Url)!)
+        request.httpMethod = HTTPMethod.put.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let encoder = JSONEncoder()
+        let dictParam : [String: String] = ["username" : username,
+                                            "phoneNumber" : phoneNumber
+                                            ]
+        
+        let body = try! encoder.encode(dictParam)
+        
+        request.httpBody = body
+
+        AF.request(request).response
+        {
+            response in
+             
+            switch response.result{
+            case .success:
+                do{
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success("Your profile has been updated successfully"))
+
+                    }
+                }
+            case .failure(_):
+                completionHandler(.failure(.custom(message: "Please try again")))
+            }
+        }
+        
+        
+    }
     func updatePassword(userId: String, Token: String, Password: String,completionHandler : @escaping Handler )
     {
        
@@ -99,7 +133,6 @@ class ApiManager{
         
         request.httpBody = body
 
-        
         AF.request(request).response
         {
             response in debugPrint(response)
@@ -231,6 +264,8 @@ class ApiManager{
             }
         }
     }
+    
+  
 
 }
 

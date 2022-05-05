@@ -10,8 +10,10 @@ import KeychainAccess
 import SwiftyJSON
 import KeychainAccess
 
+
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
+
+    let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userEmail: UILabel!
@@ -21,18 +23,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var user :UserModel?
 
 
-    let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
     var TableNames = ["Profile", "Settings", "Notifications", "Log Out"]
 
     
     @IBOutlet weak var TableDrawer: UITableView!
-    
+
     
     
     
     override func viewDidLoad() {
         //userImg.image.
-        
+
         userImg?.layer.cornerRadius = (userImg?.frame.size.width ?? 0.0) / 2
         userImg?.clipsToBounds = true
         userImg?.layer.borderWidth = 3.0
@@ -119,15 +120,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
        return nil
     }
+    
+  
 
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
          
-        
-         
          if (indexPath.row == 0)
          {
              print("cell 0")
+             performSegue(withIdentifier: "updateProfile", sender: nil)
+
          }
          if (indexPath.row == 1)
          {
@@ -140,6 +143,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
          else if (indexPath.row == 3)
          {
              do {
+                 
                  try keychain.remove("Email")
                  print("deleted")
                  

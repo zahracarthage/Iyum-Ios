@@ -54,6 +54,7 @@ class AccueilViewController: UIViewController{
             }
         }
     }
+    
     var rest : DishResto?
 
     private func registerCells(){
@@ -67,15 +68,8 @@ class AccueilViewController: UIViewController{
         vc.view.backgroundColor = .red
         navigationController?.pushViewController(vc, animated: true)
     }*/
-    /*
-    // MARK: - Navigation
+  
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension AccueilViewController : UICollectionViewDelegate,UICollectionViewDataSource{

@@ -80,7 +80,6 @@ class ViewController: UIViewController {
                     let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
                     keychain["Email"] = email
                   
-
                 }
                 
             case .failure:
