@@ -15,6 +15,7 @@
 		23AAC2A328039A2300726C67 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAC2A228039A2300726C67 /* CardView.swift */; };
 		23E860E32804E98D00F27BA9 /* QrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E860E22804E98D00F27BA9 /* QrViewController.swift */; };
 		23E860E52804F66400F27BA9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E860E42804F66400F27BA9 /* WebViewController.swift */; };
+		3E7D5947D45ED128D957B781 /* Pods_miniprojet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34AFB026D4D945D9BF0F0D40 /* Pods_miniprojet.framework */; };
 		44B3BB3427FECF9D00EBB959 /* ForgotPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3BB3327FECF9D00EBB959 /* ForgotPwdViewController.swift */; };
 		8852B45927FE45F200CF2BFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852B45827FE45F200CF2BFF /* AppDelegate.swift */; };
 		8852B45B27FE45F200CF2BFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852B45A27FE45F200CF2BFF /* SceneDelegate.swift */; };
@@ -23,7 +24,8 @@
 		8852B46327FE45F200CF2BFF /* miniprojet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8852B46127FE45F200CF2BFF /* miniprojet.xcdatamodeld */; };
 		8852B46527FE45F500CF2BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8852B46427FE45F500CF2BFF /* Assets.xcassets */; };
 		8852B46827FE45F500CF2BFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8852B46627FE45F500CF2BFF /* LaunchScreen.storyboard */; };
-		97C3A0843FCE665D4F3B7553 /* Pods_miniprojet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3BB27E46BA94EA957D447B /* Pods_miniprojet.framework */; };
+		A80AB37628243FC60000A70A /* verifyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80AB37528243FC60000A70A /* verifyAccount.swift */; };
+		A80AB37828243FD80000A70A /* VerifyAccountWithOtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80AB37728243FD80000A70A /* VerifyAccountWithOtpView.swift */; };
 		A81BF6B3280B6F55004480DD /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BF6B2280B6F55004480DD /* constants.swift */; };
 		A81BF6B6280B7089004480DD /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BF6B5280B7089004480DD /* ApiManager.swift */; };
 		A81FF2AF28177C8A00F77663 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FF2AE28177C8A00F77663 /* ProfileViewController.swift */; };
@@ -31,8 +33,12 @@
 		A875EA962818BE6500677685 /* StaticClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875EA952818BE6500677685 /* StaticClass.swift */; };
 		A875EA982818BEFC00677685 /* DetailRestauViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A875EA972818BEFC00677685 /* DetailRestauViewController.swift */; };
 		A87F6224281829C400A71E75 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87F6223281829C400A71E75 /* CircularTransition.swift */; };
+		A895E52228253CA100FE7109 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A895E52128253CA100FE7109 /* Config.plist */; };
+		A895E52428253EF700FE7109 /* verifyTwilioApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895E52328253EF700FE7109 /* verifyTwilioApi.swift */; };
+		A895E5262825452400FE7109 /* verificationRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895E5252825452400FE7109 /* verificationRes.swift */; };
 		A8ABEB79281D85310097913F /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ABEB78281D85310097913F /* UpdateProfileViewController.swift */; };
 		A8ABEB7B281DF2770097913F /* HSUnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ABEB7A281DF2770097913F /* HSUnderLineTextField.swift */; };
+		A8C823D9282688FE00FDDAE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8C823D8282688FE00FDDAE5 /* GoogleService-Info.plist */; };
 		A8D53F972809A9290007BF1D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D53F962809A9290007BF1D /* UserModel.swift */; };
 		A8D53F9A2809A9750007BF1D /* gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D53F992809A9750007BF1D /* gradient.swift */; };
 		A8D53F9C2809A9D40007BF1D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D53F9B2809A9D40007BF1D /* Colors.swift */; };
@@ -51,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E32EE0D0CC8ECD2D6619921 /* Pods-miniprojet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniprojet.debug.xcconfig"; path = "Target Support Files/Pods-miniprojet/Pods-miniprojet.debug.xcconfig"; sourceTree = "<group>"; };
+		1F58D81486E29F1AF1005EA7 /* Pods-miniprojet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniprojet.release.xcconfig"; path = "Target Support Files/Pods-miniprojet/Pods-miniprojet.release.xcconfig"; sourceTree = "<group>"; };
 		2317C98727FE56EB0032CFD0 /* AccueilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilViewController.swift; sourceTree = "<group>"; };
 		2317C98927FE56FA0032CFD0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		23AAC289280382C200726C67 /* DishResto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DishResto.swift; path = miniprojet/ViewController/CollectionViewCells/CategoryCollectionView/DishResto.swift; sourceTree = SOURCE_ROOT; };
@@ -59,8 +67,7 @@
 		23AAC2A228039A2300726C67 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		23E860E22804E98D00F27BA9 /* QrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrViewController.swift; sourceTree = "<group>"; };
 		23E860E42804F66400F27BA9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		32B4F51A8983D35224564373 /* Pods-miniprojet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniprojet.release.xcconfig"; path = "Target Support Files/Pods-miniprojet/Pods-miniprojet.release.xcconfig"; sourceTree = "<group>"; };
-		386D7190709F14A0E14D7AFB /* Pods-miniprojet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniprojet.debug.xcconfig"; path = "Target Support Files/Pods-miniprojet/Pods-miniprojet.debug.xcconfig"; sourceTree = "<group>"; };
+		34AFB026D4D945D9BF0F0D40 /* Pods_miniprojet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniprojet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B3BB3327FECF9D00EBB959 /* ForgotPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPwdViewController.swift; sourceTree = "<group>"; };
 		8852B45527FE45F200CF2BFF /* miniprojet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniprojet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8852B45827FE45F200CF2BFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +78,8 @@
 		8852B46427FE45F500CF2BFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8852B46727FE45F500CF2BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8852B46927FE45F500CF2BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A80AB37528243FC60000A70A /* verifyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyAccount.swift; sourceTree = "<group>"; };
+		A80AB37728243FD80000A70A /* VerifyAccountWithOtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAccountWithOtpView.swift; sourceTree = "<group>"; };
 		A81BF6B2280B6F55004480DD /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		A81BF6B5280B7089004480DD /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		A81FF2AE28177C8A00F77663 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -80,8 +89,12 @@
 		A87F6223281829C400A71E75 /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		A88E07ED2811A1DD007006D5 /* miniprojetRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = miniprojetRelease.entitlements; sourceTree = "<group>"; };
 		A88F84C02809D0B500CA3F22 /* miniprojet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = miniprojet.entitlements; sourceTree = "<group>"; };
+		A895E52128253CA100FE7109 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		A895E52328253EF700FE7109 /* verifyTwilioApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyTwilioApi.swift; sourceTree = "<group>"; };
+		A895E5252825452400FE7109 /* verificationRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verificationRes.swift; sourceTree = "<group>"; };
 		A8ABEB78281D85310097913F /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		A8ABEB7A281DF2770097913F /* HSUnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSUnderLineTextField.swift; sourceTree = "<group>"; };
+		A8C823D8282688FE00FDDAE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8D53F962809A9290007BF1D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = SOURCE_ROOT; };
 		A8D53F992809A9750007BF1D /* gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradient.swift; sourceTree = "<group>"; };
 		A8D53F9B2809A9D40007BF1D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -97,7 +110,6 @@
 		A8FF17122818BD61005EA43D /* RestoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestoCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8FF17142818BD69005EA43D /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8FF17162818BDB0005EA43D /* AllDishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishTableViewCell.swift; sourceTree = "<group>"; };
-		EC3BB27E46BA94EA957D447B /* Pods_miniprojet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniprojet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,21 +117,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97C3A0843FCE665D4F3B7553 /* Pods_miniprojet.framework in Frameworks */,
+				3E7D5947D45ED128D957B781 /* Pods_miniprojet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1471EB524F1CE8BA657FE7A6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EC3BB27E46BA94EA957D447B /* Pods_miniprojet.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2317C96C27FE55F50032CFD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +150,8 @@
 				A875EA972818BEFC00677685 /* DetailRestauViewController.swift */,
 				A8512126281AC485004E573F /* MapViewController.swift */,
 				A8ABEB78281D85310097913F /* UpdateProfileViewController.swift */,
+				A80AB37528243FC60000A70A /* verifyAccount.swift */,
+				A80AB37728243FD80000A70A /* VerifyAccountWithOtpView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -211,13 +217,21 @@
 			path = CardView;
 			sourceTree = "<group>";
 		};
+		476278A8DCFA0EB3D92F7894 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34AFB026D4D945D9BF0F0D40 /* Pods_miniprojet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8852B44C27FE45F100CF2BFF = {
 			isa = PBXGroup;
 			children = (
 				8852B45727FE45F200CF2BFF /* miniprojet */,
 				8852B45627FE45F200CF2BFF /* Products */,
 				E1DEC4ED5F9DFCE0BA975757 /* Pods */,
-				1471EB524F1CE8BA657FE7A6 /* Frameworks */,
+				476278A8DCFA0EB3D92F7894 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +246,7 @@
 		8852B45727FE45F200CF2BFF /* miniprojet */ = {
 			isa = PBXGroup;
 			children = (
+				A8C823D8282688FE00FDDAE5 /* GoogleService-Info.plist */,
 				A895508E28182483009378C7 /* ViewModels */,
 				A88E07ED2811A1DD007006D5 /* miniprojetRelease.entitlements */,
 				A81BF6B4280B7067004480DD /* ApiManager */,
@@ -249,6 +264,8 @@
 				8852B46627FE45F500CF2BFF /* LaunchScreen.storyboard */,
 				8852B46927FE45F500CF2BFF /* Info.plist */,
 				8852B46127FE45F200CF2BFF /* miniprojet.xcdatamodeld */,
+				A895E52128253CA100FE7109 /* Config.plist */,
+				A895E5252825452400FE7109 /* verificationRes.swift */,
 			);
 			path = miniprojet;
 			sourceTree = "<group>";
@@ -257,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				A81BF6B5280B7089004480DD /* ApiManager.swift */,
+				A895E52328253EF700FE7109 /* verifyTwilioApi.swift */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -295,8 +313,8 @@
 		E1DEC4ED5F9DFCE0BA975757 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				386D7190709F14A0E14D7AFB /* Pods-miniprojet.debug.xcconfig */,
-				32B4F51A8983D35224564373 /* Pods-miniprojet.release.xcconfig */,
+				1E32EE0D0CC8ECD2D6619921 /* Pods-miniprojet.debug.xcconfig */,
+				1F58D81486E29F1AF1005EA7 /* Pods-miniprojet.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -308,11 +326,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8852B46C27FE45F500CF2BFF /* Build configuration list for PBXNativeTarget "miniprojet" */;
 			buildPhases = (
-				4E49DA00526ECF56758E5309 /* [CP] Check Pods Manifest.lock */,
+				80FBE1347564FC08D1E51CA5 /* [CP] Check Pods Manifest.lock */,
 				8852B45127FE45F100CF2BFF /* Sources */,
 				8852B45227FE45F100CF2BFF /* Frameworks */,
 				8852B45327FE45F100CF2BFF /* Resources */,
-				4E18D5B3DF151A63EA9A2B7F /* [CP] Embed Pods Frameworks */,
+				0BDA00CE1CD9D6033C228991 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -362,18 +380,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8FF17152818BD69005EA43D /* CategoryCollectionViewCell.xib in Resources */,
+				A8C823D9282688FE00FDDAE5 /* GoogleService-Info.plist in Resources */,
 				8852B46827FE45F500CF2BFF /* LaunchScreen.storyboard in Resources */,
 				A8FF17132818BD61005EA43D /* RestoCollectionViewCell.xib in Resources */,
 				8852B46527FE45F500CF2BFF /* Assets.xcassets in Resources */,
 				A8FF17112818BD56005EA43D /* AllDIshCollectionViewCell.xib in Resources */,
 				8852B46027FE45F200CF2BFF /* Main.storyboard in Resources */,
+				A895E52228253CA100FE7109 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4E18D5B3DF151A63EA9A2B7F /* [CP] Embed Pods Frameworks */ = {
+		0BDA00CE1CD9D6033C228991 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -390,7 +410,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-miniprojet/Pods-miniprojet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4E49DA00526ECF56758E5309 /* [CP] Check Pods Manifest.lock */ = {
+		80FBE1347564FC08D1E51CA5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,11 +444,13 @@
 				A8FF170D2818BBE8005EA43D /* RatingController.swift in Sources */,
 				A8ABEB79281D85310097913F /* UpdateProfileViewController.swift in Sources */,
 				A8D53F9C2809A9D40007BF1D /* Colors.swift in Sources */,
+				A895E52428253EF700FE7109 /* verifyTwilioApi.swift in Sources */,
 				2317C98827FE56EB0032CFD0 /* AccueilViewController.swift in Sources */,
 				A81FF2AF28177C8A00F77663 /* ProfileViewController.swift in Sources */,
 				8852B46327FE45F200CF2BFF /* miniprojet.xcdatamodeld in Sources */,
 				A8FF17172818BDB0005EA43D /* AllDishTableViewCell.swift in Sources */,
 				A875EA962818BE6500677685 /* StaticClass.swift in Sources */,
+				A80AB37628243FC60000A70A /* verifyAccount.swift in Sources */,
 				A8FF17092818B817005EA43D /* Extensions.swift in Sources */,
 				8852B45D27FE45F200CF2BFF /* ViewController.swift in Sources */,
 				8852B45927FE45F200CF2BFF /* AppDelegate.swift in Sources */,
@@ -442,11 +464,13 @@
 				A8D896232812EFEF0072D94F /* ResetPasswordViewController.swift in Sources */,
 				A8ABEB7B281DF2770097913F /* HSUnderLineTextField.swift in Sources */,
 				23E860E32804E98D00F27BA9 /* QrViewController.swift in Sources */,
+				A895E5262825452400FE7109 /* verificationRes.swift in Sources */,
 				8852B45B27FE45F200CF2BFF /* SceneDelegate.swift in Sources */,
 				A8FF17032818B687005EA43D /* AccueilViewModel.swift in Sources */,
 				A81BF6B6280B7089004480DD /* ApiManager.swift in Sources */,
 				23AAC28D280385F500726C67 /* String+Extension.swift in Sources */,
 				A8FF17052818B6A7005EA43D /* RatingViewModel.swift in Sources */,
+				A80AB37828243FD80000A70A /* VerifyAccountWithOtpView.swift in Sources */,
 				A87F6224281829C400A71E75 /* CircularTransition.swift in Sources */,
 				23E860E52804F66400F27BA9 /* WebViewController.swift in Sources */,
 				23AAC2A328039A2300726C67 /* CardView.swift in Sources */,
@@ -596,7 +620,7 @@
 		};
 		8852B46D27FE45F500CF2BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 386D7190709F14A0E14D7AFB /* Pods-miniprojet.debug.xcconfig */;
+			baseConfigurationReference = 1E32EE0D0CC8ECD2D6619921 /* Pods-miniprojet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -627,7 +651,7 @@
 		};
 		8852B46E27FE45F500CF2BFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32B4F51A8983D35224564373 /* Pods-miniprojet.release.xcconfig */;
+			baseConfigurationReference = 1F58D81486E29F1AF1005EA7 /* Pods-miniprojet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -22,6 +22,42 @@ class ApiManager{
     static let shareInstance = ApiManager()
     
     
+    
+    
+    func verifyUser(email: String, completionHandler : @escaping Handler)
+    {
+        let headers: HTTPHeaders = [
+            .contentType("application/json")
+        ]
+        
+        let Url = "http://localhost:4001/user/verify/\(email)/true"
+       // var request = URLRequest(url: URL(string: GetDetailsUrl)!)
+        print(Url)
+       // request.httpMethod = HTTPMethod.post.rawValue
+      //  request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        AF.request(Url, method: .post, headers: headers)
+        .response{
+            response in
+             
+            switch response.result{
+            case .success:
+                do{
+                    if response.response?.statusCode == 200 {
+                        completionHandler(.success("Your profile has been verified successfully"))
+                        print("sucess")
+
+                    }
+                }
+            case .failure(_):
+                completionHandler(.failure(.custom(message: "Please try again")))
+                print("unsuccessfull")
+
+            }
+        }
+        
+    }
+    
 
     func getDetailsFromKey(email: String, completed: @escaping (Bool, (UserModel)) -> Void )
     {
@@ -265,6 +301,99 @@ class ApiManager{
         }
     }
     
+    
+    func sendOtp(email: String)
+    {
+       
+        let sendOtp = "http://localhost:4001/user/sendOtp"
+        var request = URLRequest(url: URL(string: sendOtp)!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        let dictParam: [String: String] = ["email": email]
+        let body = try! encoder.encode(dictParam)
+        
+        request.httpBody = body
+      
+        AF.request(request).response {
+            response in debugPrint(response)
+            
+            switch response.result{
+            case .success:
+               do {
+                   print("success")
+               }
+            case .failure(let err) :
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func resendOtp(email: String)
+    {
+        let resendOtp = "http://localhost:4001/user/resendOtp"
+        var request = URLRequest(url: URL(string: resendOtp)!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        let dictParam: [String: String] = ["email": email]
+        let body = try! encoder.encode(dictParam)
+        
+        request.httpBody = body
+      
+        AF.request(request).response {
+            response in debugPrint(response)
+            
+            switch response.result{
+            case .success:
+               do {
+                   
+                   print("otp resent successfully")
+               }
+            case .failure(let err) :
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func verifyOtp(otp: String, completionHandler : @escaping Handler)
+    {
+                let resendOtp = "http://localhost:4001/user/verifyOtp"
+        var request = URLRequest(url: URL(string: resendOtp)!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        let dictParam: [String: String] = ["otp": otp]
+        let body = try! encoder.encode(dictParam)
+        
+        request.httpBody = body
+      
+        AF.request(request).response{
+            response in debugPrint(response)
+            
+            switch response.result{
+                
+            case .success:
+               do {
+                  if response.response?.statusCode == 200{
+                      completionHandler(.success("Your account has been verified"))
+                    }
+                }
+                break
+            case .failure:
+              
+                    completionHandler(.failure(.custom(message: "not successful")))
+           
+                    
+                
+                break
+               
+            }
+        }
+        
+
+    }
   
 
 }

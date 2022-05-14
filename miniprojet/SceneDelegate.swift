@@ -8,33 +8,31 @@
 import UIKit
 import KeychainAccess
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+      
+        //FirebaseApp.configure()
         
         let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+       // let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if ((keychain["Email"]?.isEmpty) != nil)
         {
             print("user already logged in")
-            
-            print(keychain["Email"])
-            
-      
-            
+ 
+ 
             /*let Accueil = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "AccueilView") as! AccueilViewController
               DispatchQueue.main.async {
                   Accueil.modalPresentationStyle = .fullScreen
                   self.window?.rootViewController?.present(Accueil, animated: true, completion: nil)
               }*/
      
-
-            
-
         }
         else {
             print("no user logged in")

@@ -42,7 +42,6 @@ class UpdateProfileViewController: UIViewController{
 
     func InitSetup(){
        
-        
         let email = keychain["Email"]
         ApiManager.shareInstance.getDetailsFromKey(email: email!) {
             
@@ -133,7 +132,6 @@ class UpdateProfileViewController: UIViewController{
              {
              case .success:
                  do {
-                     
                     let Alert = UIAlertController(title: "Profile Update", message: "Your profile has been updated correctly", preferredStyle: .alert)
                      Alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
                      self.present(Alert,animated: true)
@@ -161,9 +159,7 @@ class UpdateProfileViewController: UIViewController{
         else
         {
             return textField.text!
-
         }
-        
     }
     
 }

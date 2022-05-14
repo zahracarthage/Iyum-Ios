@@ -8,18 +8,15 @@
 import UIKit
 import CoreData
 import KeychainAccess
-
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-      // GMSServices.provideAPIKey("AIzaSyB6v9j5I5LNF5FkagXwTDskqmJGqOLShE0")
-       //GMSPlacesClient.provideAPIKey("AIzaSyB6v9j5I5LNF5FkagXwTDskqmJGqOLShE0")
-
+     
+       FirebaseApp.configure()
       
         return true
     }

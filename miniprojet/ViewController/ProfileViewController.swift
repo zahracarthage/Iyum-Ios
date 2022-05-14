@@ -44,7 +44,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.TableDrawer.backgroundColor = .clear
 
-
     }
     
     

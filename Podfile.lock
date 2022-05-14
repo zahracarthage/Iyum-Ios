@@ -1,5 +1,43 @@
 PODS:
   - Alamofire (5.6.0)
+  - FirebaseAuth (9.0.0):
+    - FirebaseCore (~> 9.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GTMSessionFetcher/Core (~> 1.7)
+  - FirebaseCore (9.0.0):
+    - FirebaseCoreDiagnostics (~> 9.0)
+    - FirebaseCoreInternal (~> 9.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+  - FirebaseCoreDiagnostics (9.0.0):
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+    - nanopb (~> 2.30908.0)
+  - FirebaseCoreInternal (9.0.0):
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
+  - GoogleDataTransport (9.1.3):
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/AppDelegateSwizzler (7.7.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.7.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.7.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.7.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.7.0)"
+  - GoogleUtilities/Reachability (7.7.0):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.7.1)
   - KeychainAccess (4.2.2)
   - Kingfisher (7.2.1)
   - MapboxCommon (21.2.1)
@@ -27,13 +65,20 @@ PODS:
   - MapboxNavigationNative (94.0.3):
     - MapboxCommon (~> 21.2)
   - MapboxSpeech (2.0.0)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
   - Polyline (5.0.2)
+  - PromisesObjC (2.1.0)
   - Solar-dev (3.0.1)
   - SwiftyJSON (5.0.1)
   - Turf (2.4.0)
 
 DEPENDENCIES:
   - Alamofire
+  - FirebaseAuth
   - KeychainAccess
   - Kingfisher
   - MapboxMaps (= 10.4.3)
@@ -43,6 +88,13 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreInternal
+    - GoogleDataTransport
+    - GoogleUtilities
+    - GTMSessionFetcher
     - KeychainAccess
     - Kingfisher
     - MapboxCommon
@@ -54,13 +106,22 @@ SPEC REPOS:
     - MapboxNavigation
     - MapboxNavigationNative
     - MapboxSpeech
+    - nanopb
     - Polyline
+    - PromisesObjC
     - Solar-dev
     - SwiftyJSON
     - Turf
 
 SPEC CHECKSUMS:
   Alamofire: 0c07058209f211e3d32824f8e0766d7c44ac83b3
+  FirebaseAuth: eae56c13e1161da89be202b1fae3ca60b4b8d689
+  FirebaseCore: e4c0b5d9727eaee0b43f9ed00baff7500c188d7b
+  FirebaseCoreDiagnostics: 54410e5d156bf406a764c2722d9f77d682723b4c
+  FirebaseCoreInternal: 5b8f4f2e2970a4cb9bd1cf7ada16c8ba69a29530
+  GoogleDataTransport: f6eab2486453329104995371bc08d4cafbe3da1f
+  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
+  GTMSessionFetcher: 4577a4cc914a5a07c40a8a0ad0acc22080418c2d
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
   MapboxCommon: e518bf4e496722343c77177943cf3c11efe3fc9e
@@ -72,11 +133,13 @@ SPEC CHECKSUMS:
   MapboxNavigation: 9d3f1c3ac4cb3df4e471626249b18a8a9365ffe0
   MapboxNavigationNative: 145551b74e5dab196b6b11adc366d9dce529c5d3
   MapboxSpeech: e4ed02984444b6373374c72c369edaf045cc490c
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   Polyline: fce41d72e1146c41c6d081f7656827226f643dff
+  PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
   Solar-dev: 4612dc9878b9fed2667d23b327f1d4e54e16e8d0
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Turf: 60b93cfdc62758526bc7bf1ef191a829aeb9694d
 
-PODFILE CHECKSUM: 68076ad264aa2605d631b65159ed6a8999f720ea
+PODFILE CHECKSUM: 81affe2b01b1c182a5e4a5066b5f71fe18346aca
 
 COCOAPODS: 1.11.3

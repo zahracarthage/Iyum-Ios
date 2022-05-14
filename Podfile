@@ -12,6 +12,8 @@ target 'miniprojet' do
   pod 'SwiftyJSON'
   pod 'MapboxMaps', '10.4.3'
   pod 'MapboxNavigation', '~> 2.4'
+  pod 'FirebaseAuth'
+
 
 
 

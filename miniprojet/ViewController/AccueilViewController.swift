@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import KeychainAccess
+
 
 class AccueilViewController: UIViewController{
     
+    let keychain = Keychain(service: "esprit.tn.miniprojetIyum")
+
     @IBOutlet weak var changeText: UINavigationItem!
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -19,6 +23,7 @@ class AccueilViewController: UIViewController{
     
     @IBOutlet weak var CheckProfileBtn: UIButton!
     
+    @IBOutlet weak var verifiedAcctOrnot: UIImageView!
     var categories = ["Traditionelle"," burgers","cuisine americaine","plats","sandwich"]
     
    var restosAll : [DishResto] = []
@@ -28,6 +33,7 @@ class AccueilViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         CheckProfileBtn.layer.cornerRadius = CheckProfileBtn.frame.size.width / 2
+        initSetup()
         getallResto()
         AllDishCollectionView.dataSource = self
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -37,6 +43,36 @@ class AccueilViewController: UIViewController{
        
    
     }
+    
+    
+    func initSetup()
+    {
+        let email = keychain["Email"]
+        ApiManager.shareInstance.getDetailsFromKey(email: email!) {
+            
+            [self] success, results in
+                if success {
+                    
+                  //  print(results.self.verifed)
+                    print(results.self.verifed!)
+
+                    if (results.self.verifed! == false)
+                    {
+                        verifiedAcctOrnot.isHidden = false
+
+                        
+                    }
+                    else
+                    {
+                        verifiedAcctOrnot.isHidden = true
+                       
+                    }
+                    
+     
+                }
+        }
+    }
+    
     
     private func getallResto()
     {
@@ -62,6 +98,7 @@ class AccueilViewController: UIViewController{
         restoCollectionView.register(UINib(nibName: RestoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: RestoCollectionViewCell.identifier)
         AllDishCollectionView.register(UINib(nibName: AllDIshCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: AllDIshCollectionViewCell.identifier)
     }
+    
     
     /*@IBAction func change(_ sender: Any) {
         let vc = UIViewController()

@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
     internal var cameraLocationConsumer: CameraLocationConsumer!
     internal let toggleBearingImageButton: UIButton = UIButton(frame: .zero)
     internal var showsBearingImage: Bool = false {
+        
         didSet {
         syncPuckAndButton()
         }
