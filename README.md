@@ -99,7 +99,17 @@ _Below is an example of how you can instruct your audience on installing and set
 4. Enter your MongoDB key in `.env`
    ```js
    const MONGO_URI = 'ENTER YOUR API';
+   ``
+5. Download the project file
+
+6. Navigate to the root folder via cmd or terminal of your choice and enter  
+    ```sh
+   pod install
    ```
+   
+7. Run the project on Xcode
+   
+ 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
